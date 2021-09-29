@@ -5,8 +5,6 @@ import image from '../../images/background.jpg'
 import image2 from '../../images/background2.jpg'
 import image3 from '../../images/background3.jpg'
 
-
-
 export default function Bootstrap() {
     return (
         <section className="bootstrap">
