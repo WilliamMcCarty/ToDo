@@ -29,6 +29,16 @@ export default function Categories() {
         })
     }
 
+    const deleteCategory = (category) => {
+        axios.delete(`http://todo.william-mccarty.com/api/Categories/${category.CategoryId}`).then(() => {
+            let updatedCategories = categories;
+            let index = updatedCategories.findIndex(x => x.CategoryId === category);
+            updatedCategories.splice(index, 1);
+            setCategories(updatedCategories);
+            setEffectTrigger(!effectTrigger);
+        })
+    }
+
     useEffect(() => {
         getCategories();
     }, [effectTrigger])
@@ -52,11 +62,20 @@ export default function Categories() {
                         <tr>
                             <th className="textShadow">Name</th>
                             <th className="textShadow">Description</th>
+                            {currentUser.email === 'williammccarty1@outlook.com' &&
+                                <th>Actions</th>
+                            }
                         </tr>
                     </thead>
                     <tbody className="textShadow border">
                         {categories.map(cat => 
-                            <SingleCategory key={cat.CategoryId} category={cat} />
+                            <SingleCategory 
+                            key={cat.CategoryId} 
+                            category={cat} 
+                            deleteCategory={deleteCategory} 
+                            effectTrigger={effectTrigger}
+                            setEffectTrigger={setEffectTrigger}
+                            />
                         )}
                     </tbody>
                 </table>

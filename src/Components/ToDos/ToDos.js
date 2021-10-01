@@ -7,6 +7,7 @@ import axios from "axios";
 import sampleResources from "../../Utilities/sampleResources";
 import SingleResource from "./SingleResource";
 import ToDoCreate from "./ToDoCreate"
+import FilterCat from './FilterCat'
 
 export default function ToDos() {
   const { currentUser } = useAuth();
@@ -14,6 +15,7 @@ export default function ToDos() {
   const [categories, setCategories] = useState([]);
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [effectTrigger, setEffectTrigger] = useState(false);
+  const [filter, setFilter] = useState(0);
 
   const getResources = () => {
     axios.get("http://todo.william-mccarty.com/api/ToDo").then((response) => {
@@ -77,15 +79,31 @@ export default function ToDos() {
                     </div>
                 </div>
             }
+
+      <FilterCat setFilter={setFilter} categories={categories}/>
+
       <Container>
         <article className="resourceGallery row justify-content-center">
-          {resources.map((x) => (
-            <SingleResource key={x.TodoId} resource={x} 
-            deleteResource={deleteResource}
-            categories={categories} 
-            effectTrigger={effectTrigger}
-            setEffectTrigger={setEffectTrigger} />
-          ))}
+        {filter ===0 ? 
+                    resources.map(x => 
+                        <SingleResource key={x.TodoId} resource={x} 
+                        deleteResource={deleteResource}
+                        effectTrigger={effectTrigger}
+                        setEffectTrigger={setEffectTrigger}
+                        categories={categories}/>
+                    ) : 
+                    resources.filter(x => x.CategoryId === filter).map(x => 
+                        <SingleResource key={x.TodoId} resource={x} 
+                        deleteResource={deleteResource}
+                        effectTrigger={effectTrigger}
+                        setEffectTrigger={setEffectTrigger}
+                        categories={categories}/>
+                    )
+                    }
+                    
+                    {filter !== 0 && resources.filter(resource => resource.CategoryId === filter).length === 0 &&
+                        <h2 className="alert alert-warning text-dark">There are no results in this category.</h2>
+                    }
         </article>
       </Container>
     </section>

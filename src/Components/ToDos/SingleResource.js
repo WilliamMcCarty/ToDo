@@ -37,7 +37,7 @@ export default function SingleResource(props) {
                         <FontAwesomeIcon icon={['fas', 'edit']} />
                     </button>
                     <button id="deleteLink" onClick={() => {
-                        if(window.confirm(`Are you sure you want to delete ${props.resource.Name}?`))
+                        if(window.confirm(`Are you sure you want to delete ${props.resource.Action}?`))
                         {
                             props.deleteResource(props.resource)
                         }
