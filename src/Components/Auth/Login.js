@@ -12,8 +12,8 @@ export default function Login() {
     }
     return (
         <div className="login">
-            <Jumbotron className="text-center">
-                <h1 className="mb-5">Welcome to ToDos</h1>
+            <Jumbotron className="text-center jumbo">
+                <h1 className="mb-5 textShadow">Welcome to ToDos</h1>
             </Jumbotron>
             <Container>
             <Card className="m-2 border-dark tezt-center">
@@ -25,6 +25,6 @@ export default function Login() {
                 </Card.Body>
             </Card>
             </Container>
-        </div>
+        </div>        
     )
 }

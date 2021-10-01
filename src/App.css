@@ -48,24 +48,25 @@ font-family: 'Merriweather', serif;
 
 .navbar,
 .navbar-default {
-    background-image: linear-gradient(to top, rgb(0, 66, 78), rgb(77, 255, 225)) !important;    
+    background-image: linear-gradient(to top, rgb(141, 96, 0), rgb(255, 190, 137)) !important;
+    text-shadow: 2px 4px 5px rgb(53, 35, 2); 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     font-family: 'Merriweather', serif;
-    text-shadow: 2px 4px 5px rgb(3, 62, 65);
   }
 
   footer {
-    background-image: linear-gradient(to top, rgb(2, 51, 59), rgb(77, 255, 225)) !important;
-    text-shadow: 2px 4px 5px rgb(3, 62, 65);
+    background-image: linear-gradient(to top, rgb(141, 96, 0), rgb(255, 190, 137)) !important;
+    text-shadow: 2px 4px 5px rgb(53, 35, 2); 
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     font-family: 'Merriweather', serif;
     color: rgb(0, 0, 0);
+    max-height: 70px;
   }
 
   footer em {
@@ -77,19 +78,29 @@ font-family: 'Merriweather', serif;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin: 0 10px;
-    border: 3px solid rgb(112, 221, 221);
+    margin: 0 4px;
+    border: 3px solid rgb(134, 72, 2); 
     box-shadow: 2px 4px 5px rgb(0, 0, 0);
 }
 
 main {
-  background-color: rgb(101, 247, 222);
+  /* background-color: rgb(255, 157, 45);
+  background-image: linear-gradient(to bottom, saddlebrown, antiquewhite) !important; */
+  background-color: #f5d3c8;
+  background-image: linear-gradient(to top, #f5d3c8 0%, #c08552 74%);
 }
 
 .textShadow {
-  text-shadow: 2px 4px 5px rgb(3, 62, 65);
+  text-shadow: 2px 4px 5px rgb(53, 35, 2); 
 }
 
 .boxShadow {
   box-shadow: 2px 4px 5px rgb(0, 0, 0);
 }
+
+.jumbo {
+     
+  background-color: #f5d3c8;
+  background-image: linear-gradient(to top, #f5d3c8 0%, #c08552 74%);
+}
+

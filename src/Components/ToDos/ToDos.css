@@ -1,0 +1,102 @@
+  section.resources {
+    /* background-image: url('../../images/background.jpg'); */
+    background-size: 100%;
+    background-position: bottom;
+    background-color: #f5d3c8;
+    background-image: linear-gradient(to top, #f5d3c8 0%, #c08552 74%);
+  }
+  
+  section.resources article.resourceGallery {
+        padding: 2em 0 4em;
+        width: 100%;
+  }
+  
+  article.resourceGallery div.singleResource {
+    border: 2px solid #212529;
+    text-align: center;
+    position: relative; 
+    padding: 0 0 2em;
+    height: 15em;
+    margin: 0;
+    border-radius: 5px;
+    background-color: #f5d3c8;
+    background-image: linear-gradient(to top, #f5d3c8 0%, #c08552 74%);    
+  }
+  
+  div.singleResource h3 {
+    padding: .5em 0;
+    background-color: #f5d3c8;
+    background-image: linear-gradient(to top, #f5d3c8 0%, #c08552 74%);
+    border-bottom: 4px solid #212529;
+    color: #212529;
+  }   
+  
+  div.singleResource p {
+    padding: 1em;
+  }
+  
+  
+  /* #region CreateForm */
+  .createResource .card {
+    border: none;
+  }
+  
+  .createResource form{
+    padding:2em;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+  
+  
+  @media screen and (max-width:1023px) {
+    section.resources {
+        background-size: 200%;
+    }
+    .createResource form {
+        width: 95%;
+    }
+  }
+  /* #endregion */
+  
+  
+  .singleResource button#deleteLink {
+    position: absolute;
+    font-size: 1.2em;   
+    top: .5em;
+    right: .5em;
+    background: none;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: .5s;
+  }
+  
+  button#deleteLink:hover, button#editLink:hover {
+    background-color:rgba(200,200,200, .95);
+    color: rgb(144, 45, 20);
+    border: 2px solid rgb(144, 45, 20);
+  }
+  
+  
+  .singleResource button#editLink {
+    position: absolute;
+    font-size: 1.2em;
+    top: .5em;
+    left: .5em;
+    background: none;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: .5s;
+  }
+  
+  article.resourceGallery h2.alert {
+    height: 3.5em;
+  }
+  
+  .buttonChange {
+    background-color: #f5d3c8;
+    background-image: linear-gradient(to top, #f5d3c8 0%, #c08552 74%);
+    text-shadow: 2px 4px 5px rgb(53, 35, 2); 
+    color: black;
+  }

@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, useEffect} from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "../../src/App.css";
 import { useAuth } from "../contexts/AuthContext";
@@ -10,17 +10,18 @@ export default function Navigation() {
     logout();
     window.location.href = "/login/";
   }  
+  
   return (
     <Navbar fixed="top" expand="md">
       <Navbar.Brand href="/">
           ToDos
           {currentUser && (
               <span className="profiles p-2">
-           <img src={currentUser.photoURL} alt={currentUser.displayName} /> 
+           <img src={currentUser.photoURL} alt={currentUser.displayName} />
            </span>
           )}
           {currentUser && (
-              <span className="profiles p-0">
+              <span className="profiles">
            Welcome: {currentUser.displayName}
            </span>
           )}
