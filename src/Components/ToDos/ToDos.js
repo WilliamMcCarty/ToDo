@@ -9,6 +9,7 @@ import SingleResource from "./SingleResource";
 import ToDoCreate from "./ToDoCreate"
 import FilterCat from './FilterCat'
 
+
 export default function ToDos() {
   const { currentUser } = useAuth();
   const [resources, setResources] = useState(sampleResources);
@@ -84,7 +85,7 @@ export default function ToDos() {
 
       <Container>
         <article className="resourceGallery row justify-content-center">
-        {filter ===0 ? 
+                    {filter === 0 ? 
                     resources.map(x => 
                         <SingleResource key={x.TodoId} resource={x} 
                         deleteResource={deleteResource}
@@ -100,11 +101,14 @@ export default function ToDos() {
                         categories={categories}/>
                     )
                     }
-                    
+                                        
                     {filter !== 0 && resources.filter(resource => resource.CategoryId === filter).length === 0 &&
-                        <h2 className="alert alert-warning text-dark">There are no results in this category.</h2>
-                    }
+                        <h2 className="alert alert-warning text-dark jumbo boxShadow">
+                          There are no results in this category.
+                        </h2>
+                    }                                        
         </article>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       </Container>
     </section>
   );

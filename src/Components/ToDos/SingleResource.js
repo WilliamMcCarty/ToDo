@@ -16,7 +16,7 @@ export default function SingleResource(props) {
     const [showEdit, setShowEdit] = useState(false);
 
     return (
-        <div className="singleResource col-md-5 m-4">
+        <div className="singleResource col-md-5 m-4 boxShadow">
             <h3 className="textShadow">{props.resource.Action}</h3>
             {props.resource.Description !== null ? 
                 <p className="textShadow">I Need To: {props.resource.Action}</p> :
