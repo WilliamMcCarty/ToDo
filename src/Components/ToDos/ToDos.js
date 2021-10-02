@@ -83,6 +83,41 @@ export default function ToDos() {
 
       <FilterCat setFilter={setFilter} categories={categories}/>
 
+      {filter < 0 ?
+      <Container>
+        <article className="resourceGallery row justify-content-center">
+                    {filter === -1 ? 
+                    resources.filter(x => x.Done === true).map(x => 
+                      <SingleResource key={x.TodoId} resource={x} 
+                      deleteResource={deleteResource}
+                      effectTrigger={effectTrigger}
+                      setEffectTrigger={setEffectTrigger}
+                      categories={categories}/>
+                    ) :                     
+                    resources.filter(x => x.Done === false).map(x => 
+                      <SingleResource key={x.TodoId} resource={x} 
+                      deleteResource={deleteResource}
+                      effectTrigger={effectTrigger}
+                      setEffectTrigger={setEffectTrigger}
+                      categories={categories}/>
+                    )
+                    }
+
+                    {filter === -1 && resources.filter(resource => resource.Done === true).length === 0 &&
+                        <h2 className="alert alert-warning text-dark jumbo boxShadow">
+                          There Were No Results Found For Your Selection.
+                        </h2>
+                    } 
+
+                    {filter === -2 && resources.filter(resource => resource.Done === false).length === 0 &&
+                        <h2 className="alert alert-warning text-dark jumbo boxShadow">
+                          There Were No Results Found For Your Selection.
+                        </h2>
+                    }        
+        </article>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </Container>
+      :
       <Container>
         <article className="resourceGallery row justify-content-center">
                     {filter === 0 ? 
@@ -92,7 +127,7 @@ export default function ToDos() {
                         effectTrigger={effectTrigger}
                         setEffectTrigger={setEffectTrigger}
                         categories={categories}/>
-                    ) : 
+                    ) :                     
                     resources.filter(x => x.CategoryId === filter).map(x => 
                         <SingleResource key={x.TodoId} resource={x} 
                         deleteResource={deleteResource}
@@ -104,12 +139,13 @@ export default function ToDos() {
                                         
                     {filter !== 0 && resources.filter(resource => resource.CategoryId === filter).length === 0 &&
                         <h2 className="alert alert-warning text-dark jumbo boxShadow">
-                          There are no results in this category.
+                          There Were No Results Found For Your Selection.
                         </h2>
-                    }                                        
+                    }            
         </article>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       </Container>
+      }      
     </section>
   );
 }
