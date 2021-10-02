@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react'
 import {Modal, Form, Button} from 'react-bootstrap'
+import '../../App.css'
 
 export default function ToDosEdit(props) {
     const [action, setAction] = useState(props.resource.Action);
@@ -43,14 +44,14 @@ export default function ToDosEdit(props) {
 
     return (
         <Modal show={props.showEdit} onHide={() => props.setShowEdit(false)} size="lg">
-            <Modal.Header closeButton>
+            <Modal.Header closeButton className="jumbo">
                 <h1 className="text-center w-100">Edit {action}</h1>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body  className="jumbo">
                 {/* pated content below */}
                 <Form onSubmit={handleSubmit}>
                         {valSummary !== '' &&
-                            <div className="alert alert-danger">
+                            <div className="alert alert-danger boxShadow">
                                 <strong>
                                     {valSummary}
                                 </strong>
@@ -58,7 +59,7 @@ export default function ToDosEdit(props) {
                         }
                         <Form.Group id="action" className="text-left">
                             <label>Action</label>
-                            <Form.Control type="text" defaultValue={action} onChange={(e) => setAction(e.target.value)} required />
+                            <Form.Control className="boxShadow" type="text" defaultValue={action} onChange={(e) => setAction(e.target.value)} required />
                             <div className="text-danger">
                                 {actionVal}
                             </div>
@@ -76,7 +77,7 @@ export default function ToDosEdit(props) {
                         
                         <Form.Group id="cat" className="text-left">
                             <label>Category</label>
-                            <select className="form-control" defaultValue={categoryId} onChange={(e) => setCategoryId(e.target.value)} required>
+                            <select className="form-control boxShadow" defaultValue={categoryId} onChange={(e) => setCategoryId(e.target.value)} required>
                                 {props.categories.map(cat =>
                                     <option key={cat.CategoryId} value={cat.CategoryId}>
                                         {cat.Name}
@@ -84,7 +85,7 @@ export default function ToDosEdit(props) {
                                 )}
                             </select>
                         </Form.Group>
-                        <Button type="submit" className="btn btn-info w-100">Submit</Button>
+                        <Button type="submit" style={{borderColor: "black", color: "black"}} className="btn w-100 boxShadow jumbo">Submit</Button>
                     </Form>
             </Modal.Body>
         </Modal>

@@ -45,10 +45,10 @@ export default function CategoryEdit(props) {
 
     return (
         <Modal show={props.showEdit} onHide={() => props.setShowEdit(false)} size="lg">
-            <Modal.Header>
+            <Modal.Header closeButton className="jumbo">
                 <h1>Editing {props.category.categoryName}</h1>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className="jumbo">
             <Form onSubmit={handleSubmit}>
                     {valSummary !== '' &&
                         <div className="alert alert-danger">
@@ -57,20 +57,20 @@ export default function CategoryEdit(props) {
                     }
                     <Form.Group id="name" className="text-left">
                         <label>Name</label>
-                        <Form.Control type="text" onChange={(e) => setName(e.target.value)} defaultValue={name} required />
+                        <Form.Control className="boxShadow" type="text" onChange={(e) => setName(e.target.value)} defaultValue={name} required />
                         <div className="text-danger">
                             {nameVal}
                         </div>
                     </Form.Group>
                     <Form.Group id="description" className="text-left">
                         <label>Description</label>
-                        <Form.Control type="text" as="textarea" onChange={(e) => setDescription(e.target.value)} defaultValue={description} />
+                        <Form.Control className="boxShadow" type="text" as="textarea" onChange={(e) => setDescription(e.target.value)} defaultValue={description} />
                         <div className="text-danger">
                             {descVal}
                         </div>
                     </Form.Group>
                     <Form.Group id="button" className="text-center">
-                        <Button type="submit" className="btn btn-info">Update</Button>
+                        <Button type="submit" style={{borderColor: "black", color: "black"}} className="btn jumbo boxShadow">Update</Button>
                     </Form.Group>
                 </Form>
             </Modal.Body>
