@@ -63,7 +63,7 @@ export default function ToDos() {
   return (
     <section className="resources">
       <Jumbotron className="bg-info m-2 jumbo">
-        <h1 className="text-center textShadow">Resources Dashboard</h1>
+        <h1 className="text-center textShadow">ToDo Dashboard</h1>
       </Jumbotron>
       {currentUser.email === 'williammccarty1@outlook.com' &&
                 <div className="resourceOptions text-center bg-dark p-3 jumbo">
