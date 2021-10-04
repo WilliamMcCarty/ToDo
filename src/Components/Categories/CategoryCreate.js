@@ -10,11 +10,10 @@ export default function CategoryCreate(props) {
 
     //validation hooks
     const [valSummary, setValSummary] = useState('');
-    const [nameVal, setNameVal] = useState('');
+    const [nameVal] = useState('');
     const [descVal, setDescVal] = useState('');
 
     const validate =  (category) => {
-        let name = category.Name;
         let desc = category.Description;
         
         desc.length > 50 ? setDescVal('** Max 50 Characters') : setDescVal('')

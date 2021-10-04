@@ -8,9 +8,9 @@ export default function ToDosEdit(props) {
     const [done, setDone] = useState(props.resource.Done);
     const [categoryId, setCategoryId] = useState(props.resource.CategoryId);
     console.log(props.resource.TodoId)
-    const [valSummary, setValSummary] = useState("");
+    const [valSummary] = useState("");
     const [actionVal, setActionVal] = useState("");
-    const [doneVal, setDoneVal] = useState("");
+    const [setDoneVal] = useState("");
 
     const validate = (resource) => {
         let action = resource.Action

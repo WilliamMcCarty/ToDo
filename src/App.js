@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Navigation from "./Components/Navigation";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Bootstrap from './Components/Bootstrap/Bootstrap';
+import Bootstrap from './Components/Bootstrap/Bootstrap'
 import Categories from './Components/Categories/Categories';
 import ToDos from './Components/ToDos/ToDos';
 import NotFound from './Components/NotFound';
@@ -19,11 +18,10 @@ function App() {
       <Navigation />
       <Router>
         <Switch>
-          <Route exact path="/" component={ToDos} />
-          <Route path="/Login" component={Login} />
-          <PrivateRoute path="/ToDos" component={ToDos} />
-          <PrivateRoute path="/Categories" component={Categories} />
-          <Route path="/Bootstrap" component={Bootstrap} />
+          <PrivateRoute exact path="/" component={ToDos} />
+          <Route path="/login" component={Login} />
+          <PrivateRoute path="/categories" component={Categories} />
+          <Route path="/bootstrap" component={Bootstrap} />
           
           <Route component={NotFound} />
         </Switch>

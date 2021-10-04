@@ -9,11 +9,9 @@ export default function ToDoCreate(props) {
   
   const [valSummary, setValSummary] = useState("");
   const [actionVal, setActionVal] = useState("");
-  const [doneVal, setDoneVal] = useState("");
  
   const validate = (resource) => {
       let action = resource.Action
-      let done = false
 
       action.length > 50 ? 
       setActionVal('** Max 50 Characters') : 

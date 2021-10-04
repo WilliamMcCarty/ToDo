@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Jumbotron, Container } from "react-bootstrap";
+import {Jumbotron, Container} from "react-bootstrap";
 import "../../App.css";
 import "../ToDos/ToDos.css";
-import { useAuth } from "../../contexts/AuthContext";
+import {useAuth} from "../../contexts/AuthContext"
 import axios from "axios";
 import sampleResources from "../../Utilities/sampleResources";
 import SingleResource from "./SingleResource";
@@ -65,7 +65,7 @@ export default function ToDos() {
       <Jumbotron className="bg-info m-2 jumbo">
         <h1 className="text-center textShadow">ToDo Dashboard</h1>
       </Jumbotron>
-      {currentUser.email === 'williammccarty1@outlook.com' &&
+      {currentUser.email != null && currentUser.email === 'williammccarty1@outlook.com' &&
                 <div className="resourceOptions text-center bg-dark p-3 jumbo">
                     <button className="btn jumbo boxShadow" style={{color: "black", border: "black"}} onClick={() => setShowCreateForm(!showCreateForm)}>
                         {!showCreateForm ? 'Create New ToDo' : 'Cancel'}
@@ -79,7 +79,7 @@ export default function ToDos() {
                         }
                     </div>
                 </div>
-            }
+      }
 
       <FilterCat setFilter={setFilter} categories={categories}/>
 

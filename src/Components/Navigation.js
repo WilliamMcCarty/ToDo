@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import {React} from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "../../src/App.css";
 import { useAuth } from "../contexts/AuthContext";
@@ -30,10 +30,14 @@ export default function Navigation() {
       <Navbar.Collapse className="justify-content-end">
         <Navbar.Text>
           <Nav className="mr-auto">
-            <Nav.Link href="/ToDos">ToDos</Nav.Link>
-            <Nav.Link href="/Categories">Categories</Nav.Link>
-            <Nav.Link href="/Bootstrap">Bootstrap</Nav.Link>
-            {!currentUser && <Nav.Link href="/Login">Login</Nav.Link>}
+          {currentUser &&
+                <>
+                <Nav.Link href="/">ToDos</Nav.Link>
+                <Nav.Link href="/categories">Categories</Nav.Link>
+                </>
+            }            
+            <Nav.Link href="/bootstrap">Bootstrap</Nav.Link>
+            {!currentUser && <Nav.Link href="/login">Login</Nav.Link>}
             {currentUser && (
               <Nav.Link onClick={() => handleAuth()}>Logout</Nav.Link>
             )}
